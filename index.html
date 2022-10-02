@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wikidata Explorer</title>
+	<link rel="stylesheet" href="/style.css">
+
+	<script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+	
+	<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+	<script src="https://unpkg.com/avsdf-base@1.0.0/avsdf-base.js"></script>
+	<script src="https://ivis-at-bilkent.github.io/cytoscape.js-avsdf/cytoscape-avsdf.js"></script>
+	
+	<script src="https://unpkg.com/weaverjs@1.2.0/dist/weaver.min.js"></script>
+	<script src="https://cytoscape.org/cytoscape.js-spread/cytoscape-spread.js"></script>
+	
+	<script type="module" src="/index.mjs"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="form">
+			<form>
+				<h1>Wikidata Explorer</h1>
+				<!-- https://github.com/SuperSonicHub1/vanilla-js-typeahead/ -->
+				<label>
+					Search for an entity on Wikidata:
+					<input type="text" name="search-bar" id="search-bar" list="autocomplete" placeholder="anime">
+				</label>
+				
+				<button type="submit">Add</button>
+				<datalist id="autocomplete"></datalist>
+			</form>
+			<hr>
+			<p>Reposition nodes by dragging them around. Be aware that when you add new nodes that your custom positions will be erased; sorry!</p>
+			<p>Click on a green node in order to see its children. Middle-click on a node or an edge to naviagate to its Wikidata page.</p>
+			<hr>
+			<p>Made by <a href="https://github.com/SuperSonicHub1">Kyle Anthony Williams (@SuperSonicHub1)</a></p>
+			<p>Posted on <a href="https://github.com/SuperSonicHub1/wikidata-explorer">GitHub</a> under the <a href="https://unlicense.org">Unlicense</a>.</p>
+			<a href="/about.html">About</a>
+		</div>
+		<div id="cy"></div>
+	</div>
+</body>
+</html>
